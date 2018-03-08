@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      小黄书笔记-this | 我的博客 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Hi">
+    
+    
+
+    <meta name="description" content="this this 是在运行时进行绑定的，并不是在编写时绑定，它的上下文取决于函数调 用时的各种条件。 this 的绑定和函数声明的位置没有任何关系，只取决于函数的调用方式。 当一个函数被调用时，会创建一个活动记录（有时候也称为执行上下文）。这个记录会包含函数在哪里被调用（调用栈）、函数的调用方式、传入的参数等信息。 this 就是这个记录的一个属性，会在函数执行的过程中用到。1this 实际上是">
+<meta name="keywords" content="note javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小黄书笔记-this | 我的博客">
+<meta property="og:url" content="http://yoursite.com/2018/03/08/小黄书笔记-this/index.html">
+<meta property="og:site_name" content="我的博客">
+<meta property="og:description" content="this this 是在运行时进行绑定的，并不是在编写时绑定，它的上下文取决于函数调 用时的各种条件。 this 的绑定和函数声明的位置没有任何关系，只取决于函数的调用方式。 当一个函数被调用时，会创建一个活动记录（有时候也称为执行上下文）。这个记录会包含函数在哪里被调用（调用栈）、函数的调用方式、传入的参数等信息。 this 就是这个记录的一个属性，会在函数执行的过程中用到。1this 实际上是">
+<meta property="og:updated_time" content="2018-03-08T17:05:22.967Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="小黄书笔记-this | 我的博客">
+<meta name="twitter:description" content="this this 是在运行时进行绑定的，并不是在编写时绑定，它的上下文取决于函数调 用时的各种条件。 this 的绑定和函数声明的位置没有任何关系，只取决于函数的调用方式。 当一个函数被调用时，会创建一个活动记录（有时候也称为执行上下文）。这个记录会包含函数在哪里被调用（调用栈）、函数的调用方式、传入的参数等信息。 this 就是这个记录的一个属性，会在函数执行的过程中用到。1this 实际上是">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">我的博客</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">小黄书笔记-this</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2018-03-08" class="post-meta__date date">2018-03-08</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/note-javascript/">note javascript</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h3 id="this"><a href="#this" class="headerlink" title="this"></a>this</h3><p> this 是在运行时进行绑定的，并不是在编写时绑定，它的上下文取决于函数调<br> 用时的各种条件。 this 的绑定和函数声明的位置没有任何关系，只取决于函数的调用方式。<br> 当一个函数被调用时，会创建一个活动记录（有时候也称为执行上下文）。这个记录会包<br>含函数在哪里被调用（调用栈）、函数的调用方式、传入的参数等信息。 this 就是这个记<br>录的一个属性，会在函数执行的过程中用到。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this 实际上是在函数被调用时发生的绑定，它指向什么完全取决于函数在哪里被调用。</span><br></pre></td></tr></table></figure></p>
+<h4 id="绑定规则"><a href="#绑定规则" class="headerlink" title="绑定规则"></a>绑定规则</h4><p>我们来看看在函数的执行过程中调用位置如何决定 this 的绑定对象。<br>你必须找到调用位置，然后判断需要应用下面四条规则中的哪一条。我们首先会分别解释<br>这四条规则，然后解释多条规则都可用时它们的优先级如何排列。</p>
+<h4 id="判断this"><a href="#判断this" class="headerlink" title="判断this"></a>判断this</h4><p>可以按照下面的顺序来进行判断：</p>
+<ol>
+<li>函数是否在 new 中调用（ new 绑定）？如果是的话 this 绑定的是新创建的对象。<br>var bar = new foo()</li>
+<li>函数是否通过 call 、 apply （显式绑定）或者硬绑定调用？如果是的话， this 绑定的是<br>指定的对象。<br>var bar = foo.call(obj2)</li>
+<li>函数是否在某个上下文对象中调用（隐式绑定）？如果是的话， this 绑定的是那个上<br>下文对象。<br>var bar = obj1.foo()</li>
+<li>如果都不是的话，使用默认绑定。如果在严格模式下，就绑定到 undefined ，否则绑定<br>到全局对象。<br>var bar = foo()<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">如果要判断一个运行中函数的 this 绑定，就需要找到这个函数的直接调用位置。找到之后</span><br><span class="line">就可以顺序应用下面这四条规则来判断 this 的绑定对象。</span><br><span class="line">1. 由 new 调用？绑定到新创建的对象。</span><br><span class="line">2. 由 call 或者 apply （或者 bind ）调用？绑定到指定的对象。</span><br><span class="line">3. 由上下文对象调用？绑定到那个上下文对象。</span><br><span class="line">4. 默认：在严格模式下绑定到 undefined ，否则绑定到全局对象。</span><br><span class="line">一定要注意，有些调用可能在无意中使用默认绑定规则。如果想“更安全”地忽略 this 绑</span><br><span class="line">定，你可以使用一个 DMZ 对象，比如 ø = Object.create(null) ，以保护全局对象。</span><br><span class="line">ES6 中的箭头函数并不会使用四条标准的绑定规则，而是根据当前的词法作用域来决定</span><br><span class="line">this ，具体来说，箭头函数会继承外层函数调用的 this 绑定（无论 this 绑定到什么）。这</span><br><span class="line">其实和 ES6 之前代码中的 self = this 机制一样。</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
