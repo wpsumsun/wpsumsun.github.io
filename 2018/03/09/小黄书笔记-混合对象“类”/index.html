@@ -16,13 +16,17 @@
     
     
 
-    <meta property="og:type" content="article">
+    <meta name="description" content="面向类的设计模式：实例化（instantiation）、继承（inheritance）和（相对）多态（polymorphism）。12多态，这个概念是说父类的通用行为可以被子类用更特殊的行为重写。实际上，相对多态性允许我们从重写行为中引用基础行为。 面向对象编程面向对象编程强调的是数据和操作数据的行为本质上是互相关联的（当然，不同的数据有不同的行为），因此好的设计就是把数据以及和它相关的行为打包（">
+<meta name="keywords" content="note javascript 小黄书系列">
+<meta property="og:type" content="article">
 <meta property="og:title" content="小黄书笔记-混合对象“类” | 我的博客">
 <meta property="og:url" content="http://yoursite.com/2018/03/09/小黄书笔记-混合对象“类”/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:updated_time" content="2018-03-09T10:54:17.459Z">
+<meta property="og:description" content="面向类的设计模式：实例化（instantiation）、继承（inheritance）和（相对）多态（polymorphism）。12多态，这个概念是说父类的通用行为可以被子类用更特殊的行为重写。实际上，相对多态性允许我们从重写行为中引用基础行为。 面向对象编程面向对象编程强调的是数据和操作数据的行为本质上是互相关联的（当然，不同的数据有不同的行为），因此好的设计就是把数据以及和它相关的行为打包（">
+<meta property="og:updated_time" content="2018-03-11T08:56:16.833Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小黄书笔记-混合对象“类” | 我的博客">
+<meta name="twitter:description" content="面向类的设计模式：实例化（instantiation）、继承（inheritance）和（相对）多态（polymorphism）。12多态，这个概念是说父类的通用行为可以被子类用更特殊的行为重写。实际上，相对多态性允许我们从重写行为中引用基础行为。 面向对象编程面向对象编程强调的是数据和操作数据的行为本质上是互相关联的（当然，不同的数据有不同的行为），因此好的设计就是把数据以及和它相关的行为打包（">
     
     
     
@@ -158,6 +162,11 @@ classes that you can use:
           
 
           
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/note-javascript-小黄书系列/">note javascript 小黄书系列</a>
+            </font>
+          
 
       </span>
     </div>
@@ -167,7 +176,10 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    
+    <h4 id="面向类的设计模式："><a href="#面向类的设计模式：" class="headerlink" title="面向类的设计模式："></a>面向类的设计模式：</h4><p>实例化（instantiation）、继承（inheritance）和（相对）多态（polymorphism）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">多态，这个概念是说父类的通用行为可以被子类用更特殊的行为重</span><br><span class="line">写。实际上，相对多态性允许我们从重写行为中引用基础行为。</span><br></pre></td></tr></table></figure></p>
+<h4 id="面向对象编程"><a href="#面向对象编程" class="headerlink" title="面向对象编程"></a>面向对象编程</h4><p>面向对象编程强调的是数据和操作数据的行为本质上是互相关联的（当然，不同的数据有<br>不同的行为），因此好的设计就是把数据以及和它相关的行为打包（或者说封装）起来。<br>这在正式的计算机科学中有时被称为数据结构。</p>
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p>类是一种设计模式。许多语言提供了对于面向类软件设计的原生语法。JavaScript 也有类<br>似的语法，但是和其他语言中的类完全不同。<br>类意味着复制。<br>传统的类被实例化时，它的行为会被复制到实例中。类被继承时，行为也会被复制到子类<br>中。<br>多态（在继承链的不同层次名称相同但是功能不同的函数）看起来似乎是从子类引用父<br>类，但是本质上引用的其实是复制的结果。<br>JavaScript 并不会（像类那样）自动创建对象的副本。<br>混入模式（无论显式还是隐式）可以用来模拟类的复制行为，但是通常会产生丑陋并且脆<br>弱的语法，比如显式伪多态（ OtherObj.methodName.call(this, …) ），这会让代码更加难<br>懂并且难以维护。<br>混合对象“类” ｜ 141<br>此外，显式混入实际上无法完全模拟类的复制行为，因为对象（和函数！别忘了函数也<br>是对象）只能复制引用，无法复制被引用的对象或者函数本身。忽视这一点会导致许多<br>问题。<br>总地来说，在 JavaScript 中模拟类是得不偿失的，虽然能解决当前的问题，但是可能会埋<br>下更多的隐患</p>
+
   </section>
 
   <section class="post-comments">
