@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      小黄书笔记-强制类型转换 | 我的博客 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Hi">
+    
+    
+
+    <meta name="description" content="将值从一种类型转换为另一种类型通常称为类型转换（type casting），这是显式的情况；隐式的情况称为强制类型转换（coercion）。例如：123var a = 42;var b = a + &amp;quot;&amp;quot;; // 隐式强制类型转换var c = String( a ); // 显式强制类型转换 对变量b而言，强制类型转换是隐式的；由于 + 运算符的其中一个操作数是字符串，所以是字">
+<meta name="keywords" content="note javascript 小黄书">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小黄书笔记-强制类型转换 | 我的博客">
+<meta property="og:url" content="http://yoursite.com/2018/03/12/小黄书笔记-强制类型转换/index.html">
+<meta property="og:site_name" content="我的博客">
+<meta property="og:description" content="将值从一种类型转换为另一种类型通常称为类型转换（type casting），这是显式的情况；隐式的情况称为强制类型转换（coercion）。例如：123var a = 42;var b = a + &amp;quot;&amp;quot;; // 隐式强制类型转换var c = String( a ); // 显式强制类型转换 对变量b而言，强制类型转换是隐式的；由于 + 运算符的其中一个操作数是字符串，所以是字">
+<meta property="og:updated_time" content="2018-03-13T07:27:37.803Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="小黄书笔记-强制类型转换 | 我的博客">
+<meta name="twitter:description" content="将值从一种类型转换为另一种类型通常称为类型转换（type casting），这是显式的情况；隐式的情况称为强制类型转换（coercion）。例如：123var a = 42;var b = a + &amp;quot;&amp;quot;; // 隐式强制类型转换var c = String( a ); // 显式强制类型转换 对变量b而言，强制类型转换是隐式的；由于 + 运算符的其中一个操作数是字符串，所以是字">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">我的博客</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">小黄书笔记-强制类型转换</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2018-03-12" class="post-meta__date date">2018-03-12</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/note-javascript-小黄书/">note javascript 小黄书</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>将值从一种类型转换为另一种类型通常称为类型转换（type casting），这是显式的情况；隐<br>式的情况称为强制类型转换（coercion）。<br>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = 42;</span><br><span class="line">var b = a + &quot;&quot;; // 隐式强制类型转换</span><br><span class="line">var c = String( a ); // 显式强制类型转换</span><br></pre></td></tr></table></figure></p>
+<p>对变量<code>b</code>而言，强制类型转换是隐式的；由于 <code>+</code> 运算符的其中一个操作数是字符串，所以<br>是字符串拼接操作，结果是数字 <code>42</code> 被强制类型转换为相应的字符串 <code>&quot;42&quot;</code> 。<br>而<code>String(..)</code> 则是将 <code>a</code>显式强制类型转换为字符串。</p>
+<h4 id="假值："><a href="#假值：" class="headerlink" title="假值："></a>假值：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">•  undefined</span><br><span class="line">•  null</span><br><span class="line">•  false</span><br><span class="line">•  +0 、 -0 和 NaN</span><br><span class="line">•  &quot;&quot;</span><br></pre></td></tr></table></figure>
+<h4 id="日期显式转换为数字"><a href="#日期显式转换为数字" class="headerlink" title="日期显式转换为数字"></a>日期显式转换为数字</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var d = new Date( &quot;Mon, 18 Aug 2014 08:53:06 CDT&quot; );</span><br><span class="line">+d; // 1408369986000</span><br><span class="line">// 我们常用下面的方法来获得当前的时间戳，例如： </span><br><span class="line">var timestamp = +new Date();</span><br><span class="line">// 推荐使用</span><br><span class="line">Date.now()</span><br></pre></td></tr></table></figure>
+<h4 id="宽松相等和严格相等"><a href="#宽松相等和严格相等" class="headerlink" title="宽松相等和严格相等"></a>宽松相等和严格相等</h4><p> <code>==</code>允许在相等比较中进行强制类型转换，而 <code>===</code>不允许</p>
+<h5 id="字符串和数字之间的相等比较"><a href="#字符串和数字之间的相等比较" class="headerlink" title="字符串和数字之间的相等比较"></a>字符串和数字之间的相等比较</h5><p> 我们沿用本章前面字符串和数字的例子来解释<code>==</code> 中的强制类型转换：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = 42;</span><br><span class="line">var b = &quot;42&quot;;</span><br><span class="line">a === b; // false</span><br><span class="line">a == b; // true</span><br></pre></td></tr></table></figure></p>
+<p>因为没有强制类型转换，所以 <code>a === b</code> 为 <code>false</code> ， <code>42</code> 和 <code>&quot;42&quot;</code> 不相等。<br>而<code>a == b</code> 是宽松相等，即如果两个值的类型不同，则对其中之一或两者都进行强制类型<br>转换。<br>具体怎么转换？是 <code>a</code>从 <code>42</code> 转换为字符串，还是 <code>b</code>从 <code>&quot;42&quot;</code> 转换为数字？<br>ES5 规范 11.9.3.4-5 这样定义：<br>(1) 如果 <code>Type(x)</code> 是数字， <code>Type(y)</code> 是字符串，则返回 <code>x == ToNumber(y)</code><br>的结果。<br>(2) 如果 <code>Type(x)</code> 是字符串， <code>Type(y)</code> 是数字，则返回 <code>ToNumber(x) == y</code><br>的结果。</p>
+<h5 id="其他类型和布尔类型之间的相等比较"><a href="#其他类型和布尔类型之间的相等比较" class="headerlink" title="其他类型和布尔类型之间的相等比较"></a>其他类型和布尔类型之间的相等比较</h5><p>(1) 如果 <code>Type(x)</code> 是布尔类型，则返回 <code>ToNumber(x) == y</code> 的结果；<br>(2) 如果 <code>Type(y)</code> 是布尔类型，则返回 <code>x == ToNumber(y)</code> 的结果。</p>
+<h5 id="null-和-undefined之间的相等比较"><a href="#null-和-undefined之间的相等比较" class="headerlink" title="null 和 undefined之间的相等比较"></a><code>null</code> 和 <code>undefined</code>之间的相等比较</h5><p>(1) 如果 <code>x</code>为 <code>null</code> ， <code>y</code>为 <code>undefined</code> ，则结果为 <code>true</code> 。<br>(2) 如果 <code>x</code>为 <code>undefined</code> ， <code>y</code>为 <code>null</code> ，则结果为 <code>true</code> 。</p>
+<h5 id="对象和非对象之间的相等比较"><a href="#对象和非对象之间的相等比较" class="headerlink" title="对象和非对象之间的相等比较"></a>对象和非对象之间的相等比较</h5><p>(1) 如果 <code>Type(x)</code> 是字符串或数字， <code>Type(y)</code> 是对象，则返回 <code>x == ToPrimitive(y)</code><br>的结果；<br>(2) 如果 <code>Type(x)</code> 是对象， <code>Type(y)</code> 是字符串或数字，则返回 <code>ToPrimitive(x) == y</code><br>的结果。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">抽象操作 ToPrimitive （参见 ES5 规范 9.1 节）会首先</span><br><span class="line">（通过内部操作 DefaultValue ，参见 ES5 规范 8.12.8 节）检查该值是否有 valueOf() 方法。</span><br><span class="line">如果有并且返回基本类型值，就使用该值进行强制类型转换。如果没有就使用 toString()</span><br><span class="line">的返回值（如果存在）来进行强制类型转换。</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">if (a == 2 &amp;&amp; a == 3) &#123;</span><br><span class="line">// ..</span><br><span class="line">&#125;</span><br><span class="line">你也许觉得这不可能，因为 a 不会同时等于 2 和 3 。但“同时”一词并不准确，因为 a ==</span><br><span class="line">2 在 a == 3 之前执行。</span><br><span class="line">如果让 a.valueOf() 每次调用都产生副作用，比如第一次返回 2 ，第二次返回 3 ，就会出现</span><br><span class="line">这样的情况。这实现起来很简单：</span><br><span class="line">var i = 2;</span><br><span class="line">Number.prototype.valueOf = function() &#123;</span><br><span class="line">return i++;</span><br><span class="line">&#125;;</span><br><span class="line">var a = new Number( 42 );</span><br><span class="line">if (a == 2 &amp;&amp; a == 3) &#123;</span><br><span class="line">console.log( &quot;Yep, this happened.&quot; );</span><br><span class="line">&#125;</span><br><span class="line">再次强调，千万不要这样，也不要因此而抱怨强制类型转换。对一种机制的滥用并不能成</span><br><span class="line">为诟病它的借口。我们应该正确合理地运用强制类型转换，避免这些极端的情况。</span><br></pre></td></tr></table></figure>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
