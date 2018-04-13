@@ -9,7 +9,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
-    <title>gohi&#39;s Studio</title>
+    <title>Cookie和Session之间的关系和区别 · gohi&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -65,6 +65,8 @@
 
     <link rel="preload" href= /css/style.css?v=20180317 as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" type="text/css" href= /css/mobile.css?v=20180317 media="(max-width: 980px)"/>
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         
     <link rel="icon" href= /assets/favicon.ico>
     <script>
@@ -175,14 +177,23 @@
 </head>
 
     
-        <body class="home-body">
+        <body class="post-body">
     
     
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >gohi&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Cookie和Session之间的关系和区别</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>gohi's Studio.</a>
 </header>
@@ -203,17 +214,17 @@ height:50vh;
     <!-- 主页  -->
     
     
-    <!-- 文章页  -->
+    <!-- 404页  -->
             
-    <div class="site-intro-img" style="background-image: url(/intro/index-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            gohi's Studio.
-            <!-- 文章页  -->
+            Cookie和Session之间的关系和区别
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
@@ -221,12 +232,42 @@ height:50vh;
             <!-- 主页副标题  -->
             
             
-                好记性不如烂笔头
-            
-            <!-- 文章页  -->
+            <!-- 404 -->
             
         </p>
         <!-- 文章页meta -->
+        
+            <!-- 文章页标签  -->
+            
+                <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Cookie Session">Cookie Session</a>
+    
+</div>
+            
+            <div class="post-intro-meta">
+                <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                <span class="post-intro-time">2018/04/04</span>
+                
+                <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                    <span class="iconfont-archer">&#xe602;</span>
+                    <span id="busuanzi_value_page_pv"></span>
+                </span>
+                
+                <span class="shareWrapper">
+                    <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                    <span class="shareText">Share</span>
+                    <ul class="shareList">
+                        <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                            <div class="share-qrcode"></div>
+                        </li>
+                        <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                        <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                        <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                        <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                    </ul>
+                </span>
+            </div>
         
     </div>
 </div>
@@ -310,397 +351,53 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
+            <main class="main post-page">
+    <article class="article-entry">
+        <p><code>Cookie</code>和<code>Session</code>之间的关系和区别一直是面试热题， 大家都知道一些，Session比Cookie安全，Session是存储在服务器端的，Cookie是存储在客户端的，然而如果让你更详细地说明，恐怕就不怎么清楚了。本文分别对Cookie与Session做一个介绍和总结，并分别对两个知识点进行对比分析，让大家对Cookie和Session有更深入的了解。</p>
+<h4 id="什么是HTTP"><a href="#什么是HTTP" class="headerlink" title="什么是HTTP"></a>什么是HTTP</h4><hr>
+<p>HTTP:超文本传输协议（英文：HyperText Transfer Protocol，缩写：HTTP）是一种用于分布式、协作式和超媒体信息系统的应用层协议。HTTP是万维网的数据通信的基础。设计HTTP最初的目的是为了提供一种发布和接收HTML页面的方法。通过HTTP或者HTTPS协议请求的资源由统一资源标识符（Uniform Resource Identifiers，URI）来标识。HTTP 是无状态协议，说明它不能以状态来区分和管理请求和响应。也就是说，服务器单从网络连接上无从知道客户身份。可是怎么办呢？就给客户端们颁发一个通行证吧，每人一个，无论谁访问都必须携带自己通行证。这样服务器就能从通行证上确认客户身份了。这就是Cookie的工作原理。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/3/13/1621eec70c0418a2?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt=""></p>
+<h4 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h4><h5 id="什么是cookieCookie"><a href="#什么是cookieCookie" class="headerlink" title="什么是cookieCookie"></a>什么是cookieCookie</h5><p>Cookie是客户端保存用户信息的一种机制，用来记录用户的一些信息，实际上Cookie是服务器在本地机器上存储的一小段文本，并随着每次请求发送到服务器。<br>Cookie技术通过请求和响应报文中写入Cookie信息来控制客户端的状态。</p>
+<p>Cookie会根据响应报文里的一个叫做Set-Cookie的首部字段信息，通知客户端保存Cookie。当下客户端再向服务端发起请求时，客户端会自动在请求报文中加入Cookie值之后发送出去.之后服务端发现客户端发送过来的Cookie后，会检查是那个客户端发送过来的请求，然后对服务器上的记录，最后得到了之前的状态信息。<br><img src="https://user-gold-cdn.xitu.io/2018/3/13/1621f0b5f29d7f7c?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt=""><br>客户端保存了Cookie之后的发起请求<br><img src="https://user-gold-cdn.xitu.io/2018/3/13/1621f13fade59484?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt=""><br><img src="https://user-gold-cdn.xitu.io/2018/3/13/1621f407b4b82236?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt=""><br>上图很清晰地展示了发生Cookie 交互的情景，HTTP 请求报文和响应报文的内容如图所示。<br>第一可以很明显的可出首部字段内没有Cookie的相关信息，其次也能看到set-Cookie里的信息，这就是服务器端生成的Cookei信息。<br><img src="https://user-gold-cdn.xitu.io/2018/3/13/1621f4051a540bbb?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt=""><br>看之后请求，请求报文里都自动发送Cookie信息了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set-Cookie的字段的属性Set-Cookie: logcookie=3qjj; expires=Wed, 13-Mar-2019 12:08:53 GMT; Max-Age=31536000; path=/;</span><br><span class="line"> domain=fafa.com;secure; HttpOnly;</span><br></pre></td></tr></table></figure></p>
+<p>以上面的set-cookie的例子，说一下set-cookie的属性<br>1.<code>logcookie=3qjj</code> 赋予Cookie的名称和值，logcookie是名字 ，3qjj是值<br>2.<code>expires</code> 是设置cookie有效期。当省略expires属性时，Cookie仅在关闭浏览器之前有效。可以通过覆盖已过期的Cookie，设置这个Cookie的过期时间是过去的时间，实现对客户端Cookie 的实质性删除操作。<br>3.<code>path</code> 是限制指定Cookie 的发送范围的文件目录。不过另有办法可避开这项限制，看来对其作为安全机制的效果不能抱有期待。<br>4.<code>domain</code> 通过domain属性指定的域名可以做到与结尾匹配一致。比如，指定domain是fafa.com，除了fafa.com那么www.fafa.com等都可以发送Cookie。<br>5.<code>secure</code> 设置web页面只有在HTTPS安全连接时，才可以发送Cookie。HHTP则不可以进行回收。<br>6.<code>HttpOnly</code> 它使JavaScript 脚本无法获得Cookie，通过上述设置，通常从Web 页面内还可以对Cookie 进行读取操作。但使用JavaScript 的document.cookie 就无法读取附加HttpOnly 属性后的Cookie 的内容了</p>
+<h4 id="Session管理和Cookie应用"><a href="#Session管理和Cookie应用" class="headerlink" title="Session管理和Cookie应用"></a>Session管理和Cookie应用</h4><h5 id="什么是Session"><a href="#什么是Session" class="headerlink" title="什么是Session"></a>什么是Session</h5><p>上面我讲到服务端执行session机制时候会生成session的id值，这个id值会发送给客户端，客户端每次请求都会把这个id值放到http请求的头部发送给服务端，而这个id值在客户端会保存下来，保存的容器就是cookie，因此当我们完全禁掉浏览器的cookie的时候，服务端的session也会不能正常使用。<br>PHP中的Session在默认情况下是使用客户端的Cookie来保存Session ID的，所以当客户端的cookie出现问题的时候就会影响Session了。必须注意的是：Session不一定必须依赖Cookie，这也是Session相比Cookie的高明之处。当客户端的Cookie被禁用或出现问题时，PHP会自动把Session ID附着在URL中，这样再通过Session ID就能跨页使用Session变量了。<br><img src="https://user-gold-cdn.xitu.io/2018/3/13/1621f6d2880ac3ab?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt=""><br>1.客户端把信息放入报文的实体部分，通常是以POST 方法把请求发送给服务器。<br>2.服务器会发放用以识别用户的Session ID。通过验证从客户端发送过来的信息进行验证，然后把用户的认证状态与Session ID 绑定后记录在服务器端。向客户端返回响应时，会在首部字段Set-Cookie 内写入Session ID（如PHPSESSID=l128ogl…）。你可以把Session ID 想象成一种用以区分不同用户的唯一Id。<br>3.客户端接收到从服务器端发来的Session ID 后，会将其作为Cookie 保存在本地。下次向服务器发送请求时，浏览器会自动发送Cookie，所以Session ID 也随之发送到服务器。服务器端可通过验证接收到的Session ID 验证状态。</p>
+<h4 id="Cookie与Session的区别"><a href="#Cookie与Session的区别" class="headerlink" title="Cookie与Session的区别"></a>Cookie与Session的区别</h4><p>1.cookie数据存放在客户的浏览器（客户端）上，session数据放在服务器上，但是服务端的session的实现对客户端的cookie有依赖关系的；<br>2.cookie不是很安全，别人可以分析存放在本地的COOKIE并进行COOKIE欺骗，考虑到安全应当使用session；<br>3.session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能。考虑到减轻服务器性能方面，应当使用COOKIE；<br>4.单个cookie在客户端的限制是3K，就是说一个站点在客户端存放的COOKIE不能超过3K；</p>
+
+    </article>
+    <!-- 前后页  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2018/04/05/vue的computed属性和methods区别/" title= vue的computed属性和methods区别 >
+                    <div class="nextTitle">vue的computed属性和methods区别</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2018/04/03/HTTP缓存/" title= HTTP缓存 >
+                    <div class="prevTitle">HTTP缓存</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
     
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/04/13/常用排序算法/" >
-                
-                    <span>常用排序算法</span>
-            </a>
-            <div class="abstract-content">
-                排序算法是将一系列的值按照顺序进行排列的方法。
-1.冒泡排序冒泡排序（Bubble Sort）是最易懂的排序算法，但是效率较低，生产环境中很少使用。
+    <!--PC版-->
+
+    <!--PC版-->
 
 
-一次比较相邻的两个数，如果不符合排序规则，则调换两个数的伪位置。一轮比较之后，可以保证最大的（或最小）数排在最后一位
-再对出最后一位以外的数据重复之前的过程，知道全部排序完成
-
-
-算法实现如下1234567891011121314151617181920var arr = [3,6,5,4,2,1]// 数值交换function swap(arr, i ,j) &#123;  var temp = arr[i]   arr[i] = a...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/13</span>
-                </div>
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-</div>
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/04/06/XSS和CSRF“/" >
-                
-                    <span>XSS和CSRF</span>
-            </a>
-            <div class="abstract-content">
-                未完待续。。。
-
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/06</span>
-                </div>
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "XSS CSRF">XSS CSRF</a>
-    
-</div>
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/04/05/vue的computed属性和methods区别/" >
-                
-                    <span>vue的computed属性和methods区别</span>
-            </a>
-            <div class="abstract-content">
-                
-computed是响应式的，methods并非响应式。
-调用方式不一样，computed定义的成员像属性一样访问，methods定义的成员必须以函数形式调用。
-computed是带缓存的，只有其依赖的响应式属性发生改变时才会重新计算，而methods里的函数在每次调用时都要执行。
-computed中的成员可以只定义一个函数作为只读属性，也可以定义get/set变成可读写属性，这点是methods中的成员做不到的
-
-
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/05</span>
-                </div>
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "vue">vue</a>
-    
-</div>
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/04/04/Cookie和Session之间的关系和区别/" >
-                
-                    <span>Cookie和Session之间的关系和区别</span>
-            </a>
-            <div class="abstract-content">
-                Cookie和Session之间的关系和区别一直是面试热题， 大家都知道一些，Session比Cookie安全，Session是存储在服务器端的，Cookie是存储在客户端的，然而如果让你更详细地说明，恐怕就不怎么清楚了。本文分别对Cookie与Session做一个介绍和总结，并分别对两个知识点进行对比分析，让大家对Cookie和Session有更深入的了解。
-什么是HTTP
-HTTP:超文本传输协议（英文：HyperText Transfer Protocol，缩写：HTTP）是一种用于分布式、协作式和超媒体信息系统的应用层协议。HTTP是万维网的数据通信的基础。设计HTTP最初的目的...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/04</span>
-                </div>
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Cookie Session">Cookie Session</a>
-    
-</div>
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/04/03/HTTP缓存/" >
-                
-                    <span>HTTP缓存</span>
-            </a>
-            <div class="abstract-content">
-                通过网络获取内容既速度缓慢又开销巨大。较大的响应需要在客户端与服务器之间进行多次往返通信，这会延迟浏览器获得和处理内容的时间，还会增加访问者的流量费用。因此，缓存并重复利用之前获取的资源的能力成为性能优化的一个关键方面
-好在每个浏览器都自带了 HTTP 缓存实现功能。您只需要确保每个服务器响应都提供正确的 HTTP 标头指令，以指示浏览器何时可以缓存响应以及可以缓存多久。
-当服务器返回响应时，还会发出一组 HTTP 标头，用于描述响应的内容类型、长度、缓存指令、验证令牌等。例如，在上图的交互中，服务器返回一个 1024 字节的响应，指示客户端将其缓存最多 120 秒，并提供一个验证令牌（...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/03</span>
-                </div>
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "http 缓存">http 缓存</a>
-    
-</div>
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/04/01/http状态码/" >
-                
-                    <span>http状态码</span>
-            </a>
-            <div class="abstract-content">
-                本文将介绍一些具有代表性的状态码http状态码可以分为以下几类，分别是
-
-2XX(Success 成功状态码)
-3XX(Redirection 重定向状态码)
-4XX(Client Error 客户端错误状态码)
-5XX(Server Error 服务器错误状态码)
-
-2XX(Success 成功状态码)2XX 响应的结果标明请求被正常处理了
-200 OK
-
- 表示从客户端发来的请求在服务器端被正常处理了
-
-在响应报文内，随状态码一起返回的信息会因方法的不同而发生改变。比如，使用 GET 方法时，对应请求资源的实体会作为响应返回;而使用 HEAD 方法 时，对应请求资源的实体首部不随报文...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/01</span>
-                </div>
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "http">http</a>
-    
-</div>
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/03/14/Promise笔记/" >
-                
-                    <span>Promise笔记</span>
-            </a>
-            <div class="abstract-content">
-                Promise 的含义Promise 是异步编程的一种解决方案，比传统的解决方案——回调函数和事件——更合理和更强大。它由社区最早提出和实现，ES6 将其写进了语言标准，统一了用法，原生提供了Promise对象。所谓Promise，简单说就是一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。Promise 提供统一的 API，各种异步操作都可以用同样的方法进行处理。
-Promise对象有以下两个特点（1）对象的状态不受外界影响。Promise对象代表一个异步操作，有三种状态：pending（进行中）...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/14</span>
-                </div>
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "javascript note">javascript note</a>
-    
-</div>
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/03/12/小黄书笔记-强制类型转换/" >
-                
-                    <span>小黄书笔记-强制类型转换</span>
-            </a>
-            <div class="abstract-content">
-                将值从一种类型转换为另一种类型通常称为类型转换（type casting），这是显式的情况；隐式的情况称为强制类型转换（coercion）。例如：123var a = 42;var b = a + &quot;&quot;; // 隐式强制类型转换var c = String( a ); // 显式强制类型转换
-对变量b而言，强制类型转换是隐式的；由于 + 运算符的其中一个操作数是字符串，所以是字符串拼接操作，结果是数字 42 被强制类型转换为相应的字符串 &quot;42&quot; 。而String(..) 则是将 a显式强制类型转换为字符串。
-假值：12345•  undefine...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/12</span>
-                </div>
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "note javascript 小黄书">note javascript 小黄书</a>
-    
-</div>
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/03/11/小黄书笔记-行为委托/" >
-                
-                    <span>小黄书笔记-行为委托</span>
-            </a>
-            <div class="abstract-content">
-                
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/11</span>
-                </div>
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "note javascript 小黄书">note javascript 小黄书</a>
-    
-</div>
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/03/11/小黄书笔-Prototype/" >
-                
-                    <span>小黄书笔-Prototype</span>
-            </a>
-            <div class="abstract-content">
-                给一个对象设置属性并不仅仅是添加一个新属性或者修改已有的属性值。现在我们完整地讲解一下这个过程：myObject.foo = “bar”;如果 myObject 对象中包含名为 foo 的普通数据访问属性，这条赋值语句只会修改已有的属性值。如果 foo 不是直接存在于 myObject 中， [[Prototype]] 链就会被遍历，类似 [[Get]] 操作。如果原型链上找不到 foo ， foo 就会被直接添加到 myObject 上。然而，如果 foo 存在于原型链上层，赋值语句 myObject.foo = “bar” 的行为就会有些不同（而且可能很出人意料）。稍后我们会进行介绍...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/11</span>
-                </div>
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "note javascript 小黄书">note javascript 小黄书</a>
-    
-</div>
-                
-            </div>
-        </article>
-    
-    <!-- paginator  -->
-    
-    <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">NEXT &#62;</a>
-    </nav>
-    
+    <!-- 评论 -->
 </main>
             <!-- profile -->
-            
-            <div class="profile">
-    <img class="profile-avatar" src= /avatar/avatar.JPG >
-    <div class="profile-name">wanggohi</div>
-    
-    <div class="profile-signature">
-        witness me
-    </div>
-    
-    
-    <div class="profile-social">
-        
-    
-        
-            
-                <a href="mailto:wpsumsun@126.com" class="iconfont-archer email" title=email ></a>
-            
-        
-    
-        
-            
-                <a href="//github.com/wpsumsun" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
-    
-        
-            
-                <span class="iconfont-archer wechat" title=wechat>
-                  
-                  <img class="profile-qr" src="/assets/example_qr.png" />
-                </span>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-    </div>
-    
-    
-        <div class="friends">
-            <div>FRIENDS</div>
-            
-                
-                    <span>
-                        <a href= //www.baidu.com target="_black">friendA</a>
-                    </span>
-                
-            
-                
-                    <span>
-                        <a href= //www.google.com target="_black">friendB</a>
-                    </span>
-                
-            
-                
-            
-        </div>
-    
-    
-        <div class="about-me">
-            <a href = "/about" >ABOUT ME</a>
-        </div>
-    
-</div>
             
         </div>
         <footer class="footer footer-unloaded">
@@ -771,6 +468,24 @@ Promise对象有以下两个特点（1）对象的状态不受外界影响。Pro
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是HTTP"><span class="toc-number">1.</span> <span class="toc-text">什么是HTTP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cookie"><span class="toc-number">2.</span> <span class="toc-text">Cookie</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#什么是cookieCookie"><span class="toc-number">2.1.</span> <span class="toc-text">什么是cookieCookie</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Session管理和Cookie应用"><span class="toc-number">3.</span> <span class="toc-text">Session管理和Cookie应用</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#什么是Session"><span class="toc-number">3.1.</span> <span class="toc-text">什么是Session</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cookie与Session的区别"><span class="toc-number">4.</span> <span class="toc-text">Cookie与Session的区别</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1108,6 +823,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
     
     </body>
 </html>

@@ -300,6 +300,119 @@
     
     
         <article class="index-post">
+            <a class="abstract-title" href = "/2018/03/09/小黄书笔记-混合对象“类”/" >
+                
+                    <span>小黄书笔记-混合对象“类”</span>
+            </a>
+            <div class="abstract-content">
+                面向类的设计模式：实例化（instantiation）、继承（inheritance）和（相对）多态（polymorphism）。12多态，这个概念是说父类的通用行为可以被子类用更特殊的行为重写。实际上，相对多态性允许我们从重写行为中引用基础行为。
+面向对象编程面向对象编程强调的是数据和操作数据的行为本质上是互相关联的（当然，不同的数据有不同的行为），因此好的设计就是把数据以及和它相关的行为打包（或者说封装）起来。这在正式的计算机科学中有时被称为数据结构。
+小结类是一种设计模式。许多语言提供了对于面向类软件设计的原生语法。JavaScript 也有类似的语法，但是和其他语言中的类完全不同...
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/09</span>
+                </div>
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "note javascript 小黄书系列">note javascript 小黄书系列</a>
+    
+</div>
+                
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="abstract-title" href = "/2018/03/09/小黄书笔记-对象/" >
+                
+                    <span>小黄书笔记-对象</span>
+            </a>
+            <div class="abstract-content">
+                不变性
+对象常量结合 writable:false 和 configurable:false 就可以创建一个真正的常量属性（不可修改、重定义或者删除）：
+123456var myObject = &#123;&#125;;Object.defineProperty( myObject, &quot;FAVORITE_NUMBER&quot;, &#123;value: 42,writable: false,configurable: false&#125; );
+
+禁止扩展如果你想禁止一个对象添加新属性并且保留已有属性，可以使用 Object.prevent
+Extensions(..)...
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/09</span>
+                </div>
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "note javascript 小黄书系列">note javascript 小黄书系列</a>
+    
+</div>
+                
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="abstract-title" href = "/2018/03/08/小黄书笔记-this/" >
+                
+                    <span>小黄书笔记-this</span>
+            </a>
+            <div class="abstract-content">
+                this this 是在运行时进行绑定的，并不是在编写时绑定，它的上下文取决于函数调 用时的各种条件。 this 的绑定和函数声明的位置没有任何关系，只取决于函数的调用方式。 当一个函数被调用时，会创建一个活动记录（有时候也称为执行上下文）。这个记录会包含函数在哪里被调用（调用栈）、函数的调用方式、传入的参数等信息。 this 就是这个记录的一个属性，会在函数执行的过程中用到。1this 实际上是在函数被调用时发生的绑定，它指向什么完全取决于函数在哪里被调用。
+绑定规则我们来看看在函数的执行过程中调用位置如何决定 this 的绑定对象。你必须找到调用位置，然后判断需要应用下面四条规则中的...
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/08</span>
+                </div>
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "note javascript 小黄书系列">note javascript 小黄书系列</a>
+    
+</div>
+                
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="abstract-title" href = "/2018/03/07/小黄书笔记-闭包/" >
+                
+                    <span>小黄书笔记-闭包</span>
+            </a>
+            <div class="abstract-content">
+                闭包概念当函数可以记住并访问所在的词法作用域时，就产生了闭包，即使函数是在当前词法作用域之外执行。123闭包是基于词法作用域书写代码时所产生的自然结果，你甚至不需要为了利用它们而有意识地创建闭包。闭包的创建和使用在你的代码中随处可见。你缺少的是根据你自己的意愿来识别、拥抱和影响闭包的思维环境。
+123456789function foo() &#123;  var a = 2;  function bar() &#123;    console.log( a );  &#125;  return bar;&#125;var baz = foo();baz(); // 2 —— 朋友，这就...
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/07</span>
+                </div>
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "note javascript 小黄书系列">note javascript 小黄书系列</a>
+    
+</div>
+                
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
             <a class="abstract-title" href = "/2018/03/07/小黄书笔记-提升/" >
                 
                     <span>小黄书笔记-提升</span>
@@ -525,7 +638,61 @@
     
     
     
-    <div class="total-archive"> Total : 11 </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-archive"> Total : 15 </div>
     
     <div class="post-archive">
     
@@ -534,6 +701,26 @@
     
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/13</span><a class="archive-post-title" href= "/2018/04/13/常用排序算法/" >常用排序算法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/06</span><a class="archive-post-title" href= "/2018/04/06/XSS和CSRF“/" >XSS和CSRF</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/05</span><a class="archive-post-title" href= "/2018/04/05/vue的computed属性和methods区别/" >vue的computed属性和methods区别</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/04</span><a class="archive-post-title" href= "/2018/04/04/Cookie和Session之间的关系和区别/" >Cookie和Session之间的关系和区别</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -567,12 +754,12 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/09</span><a class="archive-post-title" href= "/2018/03/09/小黄书笔记-对象/" >小黄书笔记-对象</a>
+            <span class="archive-post-date">03/09</span><a class="archive-post-title" href= "/2018/03/09/小黄书笔记-混合对象“类”/" >小黄书笔记-混合对象“类”</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/09</span><a class="archive-post-title" href= "/2018/03/09/小黄书笔记-混合对象“类”/" >小黄书笔记-混合对象“类”</a>
+            <span class="archive-post-date">03/09</span><a class="archive-post-title" href= "/2018/03/09/小黄书笔记-对象/" >小黄书笔记-对象</a>
         </li>
     
     
@@ -595,15 +782,23 @@
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
+        <span class="sidebar-tag-name" data-tags="javascript note"><span class="iconfont-archer">&#xe606;</span>javascript note</span>
+    
+        <span class="sidebar-tag-name" data-tags="Cookie Session"><span class="iconfont-archer">&#xe606;</span>Cookie Session</span>
+    
         <span class="sidebar-tag-name" data-tags="http 缓存"><span class="iconfont-archer">&#xe606;</span>http 缓存</span>
     
-        <span class="sidebar-tag-name" data-tags="note javascript 小黄书系列"><span class="iconfont-archer">&#xe606;</span>note javascript 小黄书系列</span>
-    
-        <span class="sidebar-tag-name" data-tags="javascript note"><span class="iconfont-archer">&#xe606;</span>javascript note</span>
+        <span class="sidebar-tag-name" data-tags="XSS CSRF"><span class="iconfont-archer">&#xe606;</span>XSS CSRF</span>
     
         <span class="sidebar-tag-name" data-tags="http"><span class="iconfont-archer">&#xe606;</span>http</span>
     
+        <span class="sidebar-tag-name" data-tags="vue"><span class="iconfont-archer">&#xe606;</span>vue</span>
+    
         <span class="sidebar-tag-name" data-tags="note javascript 小黄书"><span class="iconfont-archer">&#xe606;</span>note javascript 小黄书</span>
+    
+        <span class="sidebar-tag-name" data-tags="note javascript 小黄书系列"><span class="iconfont-archer">&#xe606;</span>note javascript 小黄书系列</span>
+    
+        <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

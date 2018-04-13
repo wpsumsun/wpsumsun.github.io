@@ -9,7 +9,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
-    <title>gohi&#39;s Studio</title>
+    <title>常用排序算法 · gohi&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -65,6 +65,8 @@
 
     <link rel="preload" href= /css/style.css?v=20180317 as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" type="text/css" href= /css/mobile.css?v=20180317 media="(max-width: 980px)"/>
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         
     <link rel="icon" href= /assets/favicon.ico>
     <script>
@@ -175,14 +177,23 @@
 </head>
 
     
-        <body class="home-body">
+        <body class="post-body">
     
     
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >gohi&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">常用排序算法</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>gohi's Studio.</a>
 </header>
@@ -203,17 +214,17 @@ height:50vh;
     <!-- 主页  -->
     
     
-    <!-- 文章页  -->
+    <!-- 404页  -->
             
-    <div class="site-intro-img" style="background-image: url(/intro/index-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            gohi's Studio.
-            <!-- 文章页  -->
+            常用排序算法
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
@@ -221,12 +232,42 @@ height:50vh;
             <!-- 主页副标题  -->
             
             
-                好记性不如烂笔头
-            
-            <!-- 文章页  -->
+            <!-- 404 -->
             
         </p>
         <!-- 文章页meta -->
+        
+            <!-- 文章页标签  -->
+            
+                <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
+    
+</div>
+            
+            <div class="post-intro-meta">
+                <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                <span class="post-intro-time">2018/04/13</span>
+                
+                <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                    <span class="iconfont-archer">&#xe602;</span>
+                    <span id="busuanzi_value_page_pv"></span>
+                </span>
+                
+                <span class="shareWrapper">
+                    <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                    <span class="shareText">Share</span>
+                    <ul class="shareList">
+                        <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                            <div class="share-qrcode"></div>
+                        </li>
+                        <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                        <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                        <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                        <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                    </ul>
+                </span>
+            </div>
         
     </div>
 </div>
@@ -310,397 +351,84 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>排序算法是将一系列的值按照顺序进行排列的方法。</p>
+<h4 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1.冒泡排序"></a>1.冒泡排序</h4><p>冒泡排序（Bubble Sort）是最易懂的排序算法，但是效率较低，生产环境中很少使用。</p>
+<blockquote>
+<ol>
+<li>一次比较相邻的两个数，如果不符合排序规则，则调换两个数的伪位置。一轮比较之后，可以保证最大的（或最小）数排在最后一位</li>
+<li>再对出最后一位以外的数据重复之前的过程，知道全部排序完成</li>
+</ol>
+</blockquote>
+<p>算法实现如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var arr = [3,6,5,4,2,1]</span><br><span class="line"></span><br><span class="line">// 数值交换</span><br><span class="line">function swap(arr, i ,j) &#123;</span><br><span class="line">  var temp = arr[i]</span><br><span class="line">   arr[i] = arr[j]</span><br><span class="line">   arr[j] = temp</span><br><span class="line">&#125;</span><br><span class="line">function bubbleSort(arr) &#123;</span><br><span class="line">  var i,j</span><br><span class="line">  for(i=0;i&lt;arr.length-1;i++) &#123;</span><br><span class="line">    for(j=0;j&lt;arr.length-i-1;j++)&#123;</span><br><span class="line">      if(arr[j]&gt;arr[j+1]) &#123;</span><br><span class="line">        swap(arr,j,j+1)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return arr</span><br><span class="line">&#125; </span><br><span class="line">bubbleSort(arr)</span><br></pre></td></tr></table></figure></p>
+<h4 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h4><p>选择排序（Selection Sort）与冒泡排序类似，也是依次对相邻的数进行两两比较。不同之处在于，它不是每比较一次就调换位置，而是一轮比较完毕，找到最大值（或最小值）之后，将其放在正确的位置，其他数的位置不变。<br>以对数组[3, 2, 4, 5, 1] 进行从小到大排序为例，步骤如下：</p>
+<blockquote>
+<p>1.假定第一位的“3”是最小值。</p>
+<p>2.最小值“3”与第二位的“2”进行比较，2小于3，所以新的最小值是第二位的“2”。</p>
+<p>3.最小值“2”与第三位的“4”进行比较，2小于4，最小值不变。</p>
+<p>4.最小值“2”与第四位的“5”进行比较，2小于5，最小值不变。</p>
+<p>5.最小值“2”与第五位的“1”进行比较，1小于2，所以新的最小值是第五位的“1”。</p>
+<p>6.第五位的“1”与第一位的“3”互换位置，数组变为[1, 2, 4, 5, 3]</p>
+</blockquote>
+<p>算法实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">var arr = [3,6,5,4,2,1]</span><br><span class="line"></span><br><span class="line">//数值交换</span><br><span class="line">function swap(arr, i ,j) &#123;</span><br><span class="line">  var temp = arr[i]</span><br><span class="line">   arr[i] = arr[j]</span><br><span class="line">   arr[j] = temp</span><br><span class="line">&#125;</span><br><span class="line">function selectionSort(arr) &#123;</span><br><span class="line">  var i,j,min</span><br><span class="line">  for(i=0;i&lt;arr.length;i++) &#123;</span><br><span class="line">    min = i</span><br><span class="line">    for(j=i+1;j&lt;arr.length;j++) &#123;</span><br><span class="line">      if(arr[j] &lt; arr[min]) &#123;</span><br><span class="line">        min = j</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if(i!==min) &#123;</span><br><span class="line">      swap(arr,i,min)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return arr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h4><p>插入排序（insertion sort）比前面两种排序方法都更有效率。它将数组分成“已排序”和“未排序”两部分，一开始的时候，“已排序”的部分只有一个元素，然后将它后面一个元素从“未排序”部分插入“已排序”部分，从而“已排序”部分增加一个元素，“未排序”部分减少一个元素。以此类推，完成全部排序。</p>
+<p>以对数组[3, 2, 4, 5, 1] 进行从小到大排序为例，步骤如下：</p>
+<blockquote>
+<p>1.将数组分成[3]和[2, 4, 5, 1]两部分，前者是已排序的，后者是未排序的。</p>
+<p>2.取出未排序部分的第一个元素“2”，与已排序部分最后一个元素“3”比较，因为2小于3，所以2排在3前面，整个数组变成[2, 3]和[4, 5, 1]两部分。</p>
+<p>3.取出未排序部分的第一个元素“4”，与已排序部分最后一个元素“3”比较，因为4大于3，所以4排在3后面，整个数组变成[2, 3, 4]和[5, 1]两部分。</p>
+<p>4.取出未排序部分的第一个元素“5”，与已排序部分最后一个元素“4”比较，因为5大于4，所以5排在4后面，整个数组变成[2, 3, 4, 5]和[1]两部分。</p>
+<p>5.取出未排序部分的第一个元素“1”，与已排序部分最后一个元素“5”比较，因为1小于5，所以再与前一个元素“4”比较；因为1小于4，再与前一个元素“3”比较；因为1小于3，再与前一个元素“2”比较；因为小于1小于2，所以“1”排在2的前面，整个数组变成[1, 2, 3, 4, 5]。</p>
+</blockquote>
+<p>算法实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var arr = [3,6,5,4,2,1]</span><br><span class="line"></span><br><span class="line">function insertionSort(arr) &#123;</span><br><span class="line">  var i,j,value</span><br><span class="line">  for(i=0;i&lt;arr.length;i++) &#123;</span><br><span class="line">    value= arr[i]</span><br><span class="line">    for(j=i-1;j&gt;-1&amp;&amp;arr[j]&gt;value;j--) &#123;</span><br><span class="line">      arr[j+1] = arr[j]</span><br><span class="line">    &#125;</span><br><span class="line">    arr[j+1] = value</span><br><span class="line">  &#125;</span><br><span class="line">  return arr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="合并排序"><a href="#合并排序" class="headerlink" title="合并排序"></a>合并排序</h4><p>前面三种排序算法只有教学价值，因为效率低，很少实际使用。合并排序（Merge sort）则是一种被广泛使用的排序方法。</p>
+<p>它的基本思想是，将两个已经排序的数组合并，要比从头开始排序所有元素来得快。因此，可以将数组拆开，分成n个只有一个元素的数组，然后不断地两两合并，直到全部排序完成。</p>
+<p>以对数组[3, 2, 4, 5, 1] 进行从小到大排序为例，步骤如下：</p>
+<blockquote>
+<p>1.将数组分成[3, 2, 4]和[5, 1]两部分。</p>
+<p>2.将[3, 2, 4]分成[3, 2]和[4]两部分。</p>
+<p>3.将[3, 2]分成[3]和[2]两部分，然后合并成[2, 3]。</p>
+<p>4.将[2, 3]和[4]合并成[2, 3, 4]。</p>
+<p>5.将[5, 1]分成[5]和[1]两部分，然后合并成[1, 5]。</p>
+<p>6.将[2, 3, 4]和[1, 5]合并成[1, 2, 3, 4, 5]。</p>
+</blockquote>
+<p>算法实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">function merge(left, right)&#123;</span><br><span class="line">    var result  = [],</span><br><span class="line">        il      = 0,</span><br><span class="line">        ir      = 0;</span><br><span class="line"></span><br><span class="line">    while (il &lt; left.length &amp;&amp; ir &lt; right.length)&#123;</span><br><span class="line">        if (left[il] &lt; right[ir])&#123;</span><br><span class="line">            result.push(left[il++]);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            result.push(right[ir++]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return result.concat(left.slice(il)).concat(right.slice(ir));</span><br><span class="line">&#125;</span><br><span class="line">function mergeSort(arr)&#123;</span><br><span class="line"></span><br><span class="line">    if (arr.length &lt; 2) &#123;</span><br><span class="line">        return arr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    var middle = Math.floor(arr.length / 2),</span><br><span class="line">        left    = arr.slice(0, middle),</span><br><span class="line">        right   = arr.slice(middle);</span><br><span class="line">    return merge(mergeSort(left), me</span><br></pre></td></tr></table></figure></p>
+<h4 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h4><p>快速排序（quick sort）是公认最快的排序算法之一，有着广泛的应用。</p>
+<p>它的基本思想很简单：先确定一个“支点”（pivot），将所有小于“支点”的值都放在该点的左侧，大于“支点”的值都放在该点的右侧，然后对左右两侧不断重复这个过程，直到所有排序完成。</p>
+<p>具体做法参考文章<a href="http://bubkoo.com/2014/01/12/sort-algorithm/quick-sort/" target="_blank" rel="noopener">快速排序</a></p>
+<p>代码实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">var arr = [3,6,5,4,2,1,7,4]</span><br><span class="line"></span><br><span class="line">//数值交换</span><br><span class="line">function swap(arr, i ,j) &#123;</span><br><span class="line">  var temp = arr[i]</span><br><span class="line">   arr[i] = arr[j]</span><br><span class="line">   arr[j] = temp</span><br><span class="line">&#125;</span><br><span class="line">// 分区</span><br><span class="line">function partition(arr, left,right) &#123;</span><br><span class="line">  var storeIndex  = left</span><br><span class="line">  var pivot = arr[right] // 直接将支点设为最后一位</span><br><span class="line">  for(var i=left;i&lt;right;i++) &#123;</span><br><span class="line">    if(arr[i]&lt;pivot) &#123;</span><br><span class="line">      swap(arr,storeIndex,i) </span><br><span class="line">      storeIndex++</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">  swap(arr,storeIndex,right)</span><br><span class="line">    return storeIndex</span><br><span class="line">&#125;</span><br><span class="line">function quickSort(arr,left,right) &#123;</span><br><span class="line">  if(left&gt;right) &#123; return &#125;</span><br><span class="line">  var storeIndex = partition(arr,left,right)</span><br><span class="line">  quickSort(arr,left,storeIndex-1)</span><br><span class="line">  quickSort(arr,storeIndex+1,right)</span><br><span class="line">  return arr</span><br><span class="line">&#125;</span><br><span class="line">quickSort(arr,0,arr.length-1)</span><br></pre></td></tr></table></figure></p>
+
+    </article>
+    <!-- 前后页  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2018/04/06/XSS和CSRF“/" title= XSS和CSRF >
+                    <div class="prevTitle">XSS和CSRF</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
     
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/04/13/常用排序算法/" >
-                
-                    <span>常用排序算法</span>
-            </a>
-            <div class="abstract-content">
-                排序算法是将一系列的值按照顺序进行排列的方法。
-1.冒泡排序冒泡排序（Bubble Sort）是最易懂的排序算法，但是效率较低，生产环境中很少使用。
+    <!--PC版-->
+
+    <!--PC版-->
 
 
-一次比较相邻的两个数，如果不符合排序规则，则调换两个数的伪位置。一轮比较之后，可以保证最大的（或最小）数排在最后一位
-再对出最后一位以外的数据重复之前的过程，知道全部排序完成
-
-
-算法实现如下1234567891011121314151617181920var arr = [3,6,5,4,2,1]// 数值交换function swap(arr, i ,j) &#123;  var temp = arr[i]   arr[i] = a...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/13</span>
-                </div>
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-</div>
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/04/06/XSS和CSRF“/" >
-                
-                    <span>XSS和CSRF</span>
-            </a>
-            <div class="abstract-content">
-                未完待续。。。
-
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/06</span>
-                </div>
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "XSS CSRF">XSS CSRF</a>
-    
-</div>
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/04/05/vue的computed属性和methods区别/" >
-                
-                    <span>vue的computed属性和methods区别</span>
-            </a>
-            <div class="abstract-content">
-                
-computed是响应式的，methods并非响应式。
-调用方式不一样，computed定义的成员像属性一样访问，methods定义的成员必须以函数形式调用。
-computed是带缓存的，只有其依赖的响应式属性发生改变时才会重新计算，而methods里的函数在每次调用时都要执行。
-computed中的成员可以只定义一个函数作为只读属性，也可以定义get/set变成可读写属性，这点是methods中的成员做不到的
-
-
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/05</span>
-                </div>
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "vue">vue</a>
-    
-</div>
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/04/04/Cookie和Session之间的关系和区别/" >
-                
-                    <span>Cookie和Session之间的关系和区别</span>
-            </a>
-            <div class="abstract-content">
-                Cookie和Session之间的关系和区别一直是面试热题， 大家都知道一些，Session比Cookie安全，Session是存储在服务器端的，Cookie是存储在客户端的，然而如果让你更详细地说明，恐怕就不怎么清楚了。本文分别对Cookie与Session做一个介绍和总结，并分别对两个知识点进行对比分析，让大家对Cookie和Session有更深入的了解。
-什么是HTTP
-HTTP:超文本传输协议（英文：HyperText Transfer Protocol，缩写：HTTP）是一种用于分布式、协作式和超媒体信息系统的应用层协议。HTTP是万维网的数据通信的基础。设计HTTP最初的目的...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/04</span>
-                </div>
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Cookie Session">Cookie Session</a>
-    
-</div>
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/04/03/HTTP缓存/" >
-                
-                    <span>HTTP缓存</span>
-            </a>
-            <div class="abstract-content">
-                通过网络获取内容既速度缓慢又开销巨大。较大的响应需要在客户端与服务器之间进行多次往返通信，这会延迟浏览器获得和处理内容的时间，还会增加访问者的流量费用。因此，缓存并重复利用之前获取的资源的能力成为性能优化的一个关键方面
-好在每个浏览器都自带了 HTTP 缓存实现功能。您只需要确保每个服务器响应都提供正确的 HTTP 标头指令，以指示浏览器何时可以缓存响应以及可以缓存多久。
-当服务器返回响应时，还会发出一组 HTTP 标头，用于描述响应的内容类型、长度、缓存指令、验证令牌等。例如，在上图的交互中，服务器返回一个 1024 字节的响应，指示客户端将其缓存最多 120 秒，并提供一个验证令牌（...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/03</span>
-                </div>
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "http 缓存">http 缓存</a>
-    
-</div>
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/04/01/http状态码/" >
-                
-                    <span>http状态码</span>
-            </a>
-            <div class="abstract-content">
-                本文将介绍一些具有代表性的状态码http状态码可以分为以下几类，分别是
-
-2XX(Success 成功状态码)
-3XX(Redirection 重定向状态码)
-4XX(Client Error 客户端错误状态码)
-5XX(Server Error 服务器错误状态码)
-
-2XX(Success 成功状态码)2XX 响应的结果标明请求被正常处理了
-200 OK
-
- 表示从客户端发来的请求在服务器端被正常处理了
-
-在响应报文内，随状态码一起返回的信息会因方法的不同而发生改变。比如，使用 GET 方法时，对应请求资源的实体会作为响应返回;而使用 HEAD 方法 时，对应请求资源的实体首部不随报文...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/01</span>
-                </div>
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "http">http</a>
-    
-</div>
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/03/14/Promise笔记/" >
-                
-                    <span>Promise笔记</span>
-            </a>
-            <div class="abstract-content">
-                Promise 的含义Promise 是异步编程的一种解决方案，比传统的解决方案——回调函数和事件——更合理和更强大。它由社区最早提出和实现，ES6 将其写进了语言标准，统一了用法，原生提供了Promise对象。所谓Promise，简单说就是一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。Promise 提供统一的 API，各种异步操作都可以用同样的方法进行处理。
-Promise对象有以下两个特点（1）对象的状态不受外界影响。Promise对象代表一个异步操作，有三种状态：pending（进行中）...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/14</span>
-                </div>
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "javascript note">javascript note</a>
-    
-</div>
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/03/12/小黄书笔记-强制类型转换/" >
-                
-                    <span>小黄书笔记-强制类型转换</span>
-            </a>
-            <div class="abstract-content">
-                将值从一种类型转换为另一种类型通常称为类型转换（type casting），这是显式的情况；隐式的情况称为强制类型转换（coercion）。例如：123var a = 42;var b = a + &quot;&quot;; // 隐式强制类型转换var c = String( a ); // 显式强制类型转换
-对变量b而言，强制类型转换是隐式的；由于 + 运算符的其中一个操作数是字符串，所以是字符串拼接操作，结果是数字 42 被强制类型转换为相应的字符串 &quot;42&quot; 。而String(..) 则是将 a显式强制类型转换为字符串。
-假值：12345•  undefine...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/12</span>
-                </div>
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "note javascript 小黄书">note javascript 小黄书</a>
-    
-</div>
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/03/11/小黄书笔记-行为委托/" >
-                
-                    <span>小黄书笔记-行为委托</span>
-            </a>
-            <div class="abstract-content">
-                
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/11</span>
-                </div>
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "note javascript 小黄书">note javascript 小黄书</a>
-    
-</div>
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/03/11/小黄书笔-Prototype/" >
-                
-                    <span>小黄书笔-Prototype</span>
-            </a>
-            <div class="abstract-content">
-                给一个对象设置属性并不仅仅是添加一个新属性或者修改已有的属性值。现在我们完整地讲解一下这个过程：myObject.foo = “bar”;如果 myObject 对象中包含名为 foo 的普通数据访问属性，这条赋值语句只会修改已有的属性值。如果 foo 不是直接存在于 myObject 中， [[Prototype]] 链就会被遍历，类似 [[Get]] 操作。如果原型链上找不到 foo ， foo 就会被直接添加到 myObject 上。然而，如果 foo 存在于原型链上层，赋值语句 myObject.foo = “bar” 的行为就会有些不同（而且可能很出人意料）。稍后我们会进行介绍...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/11</span>
-                </div>
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "note javascript 小黄书">note javascript 小黄书</a>
-    
-</div>
-                
-            </div>
-        </article>
-    
-    <!-- paginator  -->
-    
-    <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">NEXT &#62;</a>
-    </nav>
-    
+    <!-- 评论 -->
 </main>
             <!-- profile -->
-            
-            <div class="profile">
-    <img class="profile-avatar" src= /avatar/avatar.JPG >
-    <div class="profile-name">wanggohi</div>
-    
-    <div class="profile-signature">
-        witness me
-    </div>
-    
-    
-    <div class="profile-social">
-        
-    
-        
-            
-                <a href="mailto:wpsumsun@126.com" class="iconfont-archer email" title=email ></a>
-            
-        
-    
-        
-            
-                <a href="//github.com/wpsumsun" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
-    
-        
-            
-                <span class="iconfont-archer wechat" title=wechat>
-                  
-                  <img class="profile-qr" src="/assets/example_qr.png" />
-                </span>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-    </div>
-    
-    
-        <div class="friends">
-            <div>FRIENDS</div>
-            
-                
-                    <span>
-                        <a href= //www.baidu.com target="_black">friendA</a>
-                    </span>
-                
-            
-                
-                    <span>
-                        <a href= //www.google.com target="_black">friendB</a>
-                    </span>
-                
-            
-                
-            
-        </div>
-    
-    
-        <div class="about-me">
-            <a href = "/about" >ABOUT ME</a>
-        </div>
-    
-</div>
             
         </div>
         <footer class="footer footer-unloaded">
@@ -771,6 +499,24 @@ Promise对象有以下两个特点（1）对象的状态不受外界影响。Pro
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-冒泡排序"><span class="toc-number">1.</span> <span class="toc-text">1.冒泡排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#选择排序"><span class="toc-number">2.</span> <span class="toc-text">选择排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#插入排序"><span class="toc-number">3.</span> <span class="toc-text">插入排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#合并排序"><span class="toc-number">4.</span> <span class="toc-text">合并排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#快速排序"><span class="toc-number">5.</span> <span class="toc-text">快速排序</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1108,6 +854,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
     
     </body>
 </html>
