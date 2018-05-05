@@ -9,7 +9,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
-    <title>小黄书笔记-闭包 · gohi&#39;s Studio</title>
+    <title>drag&amp;drop · gohi&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -191,7 +191,7 @@
                 <a href="/" >gohi&#39;s Studio.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">小黄书笔记-闭包</a>
+                <a href="#" class="post-name">drag&drop</a>
             </div>
     </div>
     
@@ -223,7 +223,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            小黄书笔记-闭包
+            drag&drop
             <!-- 404 -->
             
         </h1>
@@ -241,13 +241,13 @@ height:50vh;
             
                 <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "note javascript 小黄书系列">note javascript 小黄书系列</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "drag drop">drag drop</a>
     
 </div>
             
             <div class="post-intro-meta">
                 <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                <span class="post-intro-time">2018/03/07</span>
+                <span class="post-intro-time">2018/05/05</span>
                 
                 <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                     <span class="iconfont-archer">&#xe602;</span>
@@ -353,26 +353,19 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>当函数可以记住并访问所在的词法作用域时，就产生了闭包，即使函数是在当前词法作用<br>域之外执行。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">闭包是基于词法作用域书写代码时所产生的自然结果，你甚至不需要为了利用它们而有意</span><br><span class="line">识地创建闭包。闭包的创建和使用在你的代码中随处可见。你缺少的是根据你自己的意愿</span><br><span class="line">来识别、拥抱和影响闭包的思维环境。</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123;</span><br><span class="line">  var a = 2;</span><br><span class="line">  function bar() &#123;</span><br><span class="line">    console.log( a );</span><br><span class="line">  &#125;</span><br><span class="line">  return bar;</span><br><span class="line">&#125;</span><br><span class="line">var baz = foo();</span><br><span class="line">baz(); // 2 —— 朋友，这就是闭包的效果。</span><br></pre></td></tr></table></figure>
-<p>在 foo() 执行后，通常会期待 foo() 的整个内部作用域都被销毁，因为我们知道引擎有垃<br>圾回收器用来释放不再使用的内存空间。由于看上去 foo() 的内容不会再被使用，所以很<br>自然地会考虑对其进行回收。<br>而闭包的“神奇”之处正是可以阻止这件事情的发生。事实上内部作用域依然存在，因此<br>没有被回收。谁在使用这个内部作用域？原来是 bar() 本身在使用。<br>拜 bar() 所声明的位置所赐，它拥有涵盖 foo() 内部作用域的闭包，使得该作用域能够一<br>直存活，以供 bar() 在之后任何时间进行引用。<br>bar() 依然持有对该作用域的引用，而这个引用就叫作闭包。<br>因此，在几微秒之后变量 baz 被实际调用（调用内部函数 bar ），不出意外它可以访问定义<br>46 ｜ 第 5 章<br>时的词法作用域，因此它也可以如预期般访问变量 a 。<br>这个函数在定义时的词法作用域以外的地方被调用。闭包使得函数可以继续访问定义时的<br>词法作用域<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">无论通过何种手段将内部函数传递到所在的词法作用域以外，它都会持有对原始定义作用</span><br><span class="line">域的引用，无论在何处执行这个函数都会使用闭包。</span><br></pre></td></tr></table></figure></p>
+        <p>最近学习了一下drag的用法， 简单写了个拖拽排序，附上文档和demo地址<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/Events/drag" target="_blank" rel="noopener">MDN</a><br><a href="http://jsbin.com/wucayutuga/edit?css,js,output" target="_blank" rel="noopener">demo</a></p>
 
     </article>
     <!-- 前后页  -->
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2018/03/08/小黄书笔记-this/" title= 小黄书笔记-this >
-                    <div class="nextTitle">小黄书笔记-this</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2018/03/07/小黄书笔记-提升/" title= 小黄书笔记-提升 >
-                    <div class="prevTitle">小黄书笔记-提升</div>
+                <a href= "/2018/04/19/自适应高度文本框/" title= 自适应高度文本框 >
+                    <div class="prevTitle">自适应高度文本框</div>
                 </a>
             
         </li>
@@ -478,7 +471,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#闭包"><span class="toc-number">1.</span> <span class="toc-text">闭包</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#概念"><span class="toc-number">1.1.</span> <span class="toc-text">概念</span></a></li></ol></li></ol>
+        
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
